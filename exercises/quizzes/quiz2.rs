@@ -30,9 +30,7 @@ mod my_module {
     pub fn transformer(input: Vec<(String, Command)>) -> Vec<String> {
         let mut output = Vec::new();
 
-        for i in input {
-            let string_element = i.0;
-            let command = i.1;
+        for (string_element, command) in input {
             match command {
                 Command::Uppercase => output.push(string_element.to_uppercase()),
                 Command::Trim => output.push(string_element.trim().to_string()),
